@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>اسلامی ایپ - نماز اور دعائیں</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Nastaliq+Urdu:wght@400;500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" href="https://img.icons8.com/color/96/000000/islam.png">
+</head>
+<body>
+    <!-- ہیڈر -->
+    <header class="app-header">
+        <div class="header-content">
+            <div class="logo">
+                <i class="fas fa-mosque"></i>
+                <h1>اسلامی ایپ</h1>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- ٹیب نیویگیشن -->
+    <nav class="tab-nav">
+        <div class="tabs">
+            <button class="tab active" onclick="switchTab('home')">
+                <i class="fas fa-home"></i>
+                <span>ہوم</span>
+            </button>
+            <button class="tab" onclick="switchTab('namaz')">
+                <i class="fas fa-clock"></i>
+                <span>نماز</span>
+            </button>
+            <button class="tab" onclick="switchTab('dua')">
+                <i class="fas fa-hands-praying"></i>
+                <span>دعائیں</span>
+            </button>
+            <button class="tab" onclick="switchTab('about')">
+                <i class="fas fa-info-circle"></i>
+                <span>معلومات</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- مین مواد -->
+    <main class="main-content">
+        <!-- ہوم پیج -->
+        <section id="home" class="tab-content active">
+            <div class="hero-section">
+                <div class="hero-icon">
+                    <i class="fas fa-star-and-crescent"></i>
+                </div>
+                <h2>السلام علیکم و رحمت اللہ و برکاتہ</h2>
+                <p>یہ ایپ آپ کو نماز کی مکمل رہنمائی اور روزمرہ کی دعائیں فراہم کرتی ہے</p>
+            </div>
+            
+            <div class="quick-links">
+                <div class="link-card" onclick="switchTab('namaz')">
+                    <i class="fas fa-clock"></i>
+                    <h3>نماز سیکھیں</h3>
+                    <p>مکمل طریقہ نماز</p>
+                </div>
+                <div class="link-card" onclick="switchTab('dua')">
+                    <i class="fas fa-hands-praying"></i>
+                    <h3>دعائیں</h3>
+                    <p>روزمرہ کی دعائیں</p>
+                </div>
+                <div class="link-card" onclick="showTasbeeh()">
+                    <i class="fas fa-dharmachakra"></i>
+                    <h3>تسبیح</h3>
+                    <p>ذکر و اذکار</p>
+                </div>
+            </div>
+            
+            <div class="prayer-times">
+                <h3><i class="fas fa-calendar-alt"></i> آج کی نماز کے اوقات</h3>
+                <div class="times-grid" id="prayerTimes">
+                    <!-- نماز کے اوقات یہاں لوڈ ہوں گے -->
+                </div>
+            </div>
+        </section>
+
+        <!-- نماز سیکشن -->
+        <section id="namaz" class="tab-content">
+            <div class="section-header">
+                <h2><i class="fas fa-clock"></i> طریقہ نماز</h2>
+                <p>نماز پڑھنے کا مکمل طریقہ سیکھیں</p>
+            </div>
+            
+            <div class="namaz-types" id="namazContainer">
+                <!-- نماز کے اقسام یہاں لوڈ ہوں گے -->
+            </div>
+        </section>
+
+        <!-- دعائیں سیکشن -->
+        <section id="dua" class="tab-content">
+            <div class="section-header">
+                <h2><i class="fas fa-hands-praying"></i> دعائیں</h2>
+                <p>روزمرہ زندگی کی اہم دعائیں</p>
+            </div>
+            
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="duaSearch" placeholder="دعا تلاش کریں..." onkeyup="searchDuas()">
+            </div>
+            
+            <div class="dua-categories" id="duaCategories">
+                <!-- دعا کی اقسام یہاں لوڈ ہوں گے -->
+            </div>
+        </section>
+
+        <!-- دعا کی فہرست -->
+        <section id="dua-list" class="tab-content">
+            <div class="list-header">
+                <button class="back-btn" onclick="backToDuaCategories()">
+                    <i class="fas fa-arrow-right"></i>
+                    <span>واپس جائیں</span>
+                </button>
+                <h3 id="duaListTitle">دعائیں</h3>
+            </div>
+            
+            <div class="duas-list" id="duasListContainer">
+                <!-- مخصوص قسم کی دعائیں یہاں لوڈ ہوں گی -->
+            </div>
+        </section>
+
+        <!-- معلومات سیکشن -->
+        <section id="about" class="tab-content">
+            <div class="section-header">
+                <h2><i class="fas fa-info-circle"></i> ایپ کے بارے میں</h2>
+            </div>
+            
+            <div class="about-card">
+                <div class="app-icon-large">
+                    <i class="fas fa-mosque"></i>
+                </div>
+                <h3>اسلامی ایپ</h3>
+                <p>یہ ایپ مسلمانوں کے لئے نماز اور دعاؤں کی رہنمائی فراہم کرتی ہے۔</p>
+                
+                <div class="features">
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>مکمل نماز کا طریقہ</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>روزمرہ کی دعائیں</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>موبائل فرینڈلی ڈیزائن</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>آف لائن استعمال</span>
+                    </div>
+                </div>
+                
+                <div class="version-info">
+                    <p><strong>ورژن:</strong> 1.0.0</p>
+                    <p><strong>تازہ ترین اپڈیٹ:</strong> اکتوبر 2023</p>
+                </div>
+            </div>
+            
+            <div class="developer-info">
+                <h4><i class="fas fa-code"></i> ڈویلپر کی معلومات</h4>
+                <p>یہ ایپ اسلامی مواد تک آسان رسائی کے لئے بنائی گئی ہے۔</p>
+                <p>تمام مواد قابل اعتماد ذرائع سے لیا گیا ہے۔</p>
+            </div>
+        </section>
+
+        <!-- تسبیح کاؤنٹر -->
+        <section id="tasbeeh" class="tab-content">
+            <div class="section-header">
+                <button class="back-btn" onclick="closeTasbeeh()">
+                    <i class="fas fa-arrow-right"></i>
+                    <span>واپس جائیں</span>
+                </button>
+                <h2><i class="fas fa-dharmachakra"></i> تسبیح کاؤنٹر</h2>
+            </div>
+            
+            <div class="tasbeeh-container">
+                <div class="tasbeeh-counter">
+                    <div class="counter-display" id="tasbeehCount">0</div>
+                    <div class="counter-label">ذکر</div>
+                </div>
+                
+                <div class="tasbeeh-controls">
+                    <button class="tasbeeh-btn" onclick="incrementTasbeeh()">
+                        <i class="fas fa-plus"></i>
+                        <span>اضافہ کریں</span>
+                    </button>
+                    <button class="tasbeeh-btn reset" onclick="resetTasbeeh()">
+                        <i class="fas fa-redo"></i>
+                        <span>ری سیٹ</span>
+                    </button>
+                </div>
+                
+                <div class="tasbeeh-presets">
+                    <h4>مشہور اذکار</h4>
+                    <div class="preset-buttons">
+                        <button onclick="setTasbeehGoal(33)">سبحان اللہ (33)</button>
+                        <button onclick="setTasbeehGoal(33)">الحمدللہ (33)</button>
+                        <button onclick="setTasbeehGoal(34)">اللہ اکبر (34)</button>
+                        <button onclick="setTasbeehGoal(100)">استغفار (100)</button>
+                    </div>
+                </div>
+                
+                <div class="tasbeeh-goal">
+                    <h4>ہدف مقرر کریں</h4>
+                    <div class="goal-input">
+                        <input type="number" id="tasbeehGoal" value="100" min="1" max="1000">
+                        <button onclick="setCustomGoal()">مقرر کریں</button>
+                    </div>
+                    <div class="goal-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <div class="goal-text" id="goalText">0/100</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- مودل/پاپ اپ -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">عنوان</h3>
+                <button class="close-btn" onclick="closeModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- مواد یہاں لوڈ ہوگا -->
+            </div>
+        </div>
+    </div>
+
+    <!-- لوڈنگ انڈیکیٹر -->
+    <div class="loading" id="loading">
+        <div class="spinner">
+            <i class="fas fa-spinner fa-spin"></i>
+        </div>
+        <p>لوڈ ہو رہا ہے...</p>
+    </div>
+
+    <!-- فٹر -->
+    <footer class="app-footer">
+        <p>© 2023 اسلامی ایپ - تمام حقوق محفوظ ہیں</p>
+        <p>اللہ ہماری نمازیں اور دعائیں قبول فرمائے۔ آمین</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

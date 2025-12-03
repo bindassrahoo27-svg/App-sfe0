@@ -1,261 +1,438 @@
 <!DOCTYPE html>
-<html lang="ur" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>اسلامی ایپ - نماز اور دعائیں</title>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>Islamic Guide - Prayer & Duas</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Nastaliq+Urdu:wght@400;500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="apple-touch-icon" href="https://img.icons8.com/color/96/000000/islam.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" href="https://img.icons8.com/fluency/96/000000/star-and-crescent.png">
 </head>
 <body>
-    <!-- ہیڈر -->
+    <!-- Header -->
     <header class="app-header">
         <div class="header-content">
             <div class="logo">
                 <i class="fas fa-mosque"></i>
-                <h1>اسلامی ایپ</h1>
+                <h1>Islamic Guide</h1>
             </div>
-            <button class="menu-toggle" id="menuToggle">
-                <i class="fas fa-bars"></i>
-            </button>
+            <div class="header-actions">
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
         </div>
     </header>
 
-    <!-- ٹیب نیویگیشن -->
+    <!-- Sidebar Menu -->
+    <nav class="sidebar-menu" id="sidebarMenu">
+        <div class="sidebar-header">
+            <h3>Menu</h3>
+            <button class="close-sidebar" id="closeSidebar">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="sidebar-links">
+            <a href="#" onclick="switchTab('home'); closeSidebar()">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="#" onclick="switchTab('namaz'); closeSidebar()">
+                <i class="fas fa-clock"></i>
+                <span>Prayer Guide</span>
+            </a>
+            <a href="#" onclick="switchTab('dua'); closeSidebar()">
+                <i class="fas fa-hands-praying"></i>
+                <span>Daily Duas</span>
+            </a>
+            <a href="#" onclick="switchTab('quran'); closeSidebar()">
+                <i class="fas fa-quran"></i>
+                <span>Quran Verses</span>
+            </a>
+            <a href="#" onclick="switchTab('tasbeeh'); closeSidebar()">
+                <i class="fas fa-dharmachakra"></i>
+                <span>Tasbeeh Counter</span>
+            </a>
+            <a href="#" onclick="switchTab('settings'); closeSidebar()">
+                <i class="fas fa-cog"></i>
+                <span>Settings</span>
+            </a>
+        </div>
+        <div class="sidebar-footer">
+            <p>Made with ❤️ for Muslims</p>
+            <p>Version 2.0</p>
+        </div>
+    </nav>
+
+    <!-- Tab Navigation -->
     <nav class="tab-nav">
         <div class="tabs">
             <button class="tab active" onclick="switchTab('home')">
                 <i class="fas fa-home"></i>
-                <span>ہوم</span>
+                <span>Home</span>
             </button>
             <button class="tab" onclick="switchTab('namaz')">
                 <i class="fas fa-clock"></i>
-                <span>نماز</span>
+                <span>Prayer</span>
             </button>
             <button class="tab" onclick="switchTab('dua')">
                 <i class="fas fa-hands-praying"></i>
-                <span>دعائیں</span>
+                <span>Duas</span>
             </button>
-            <button class="tab" onclick="switchTab('about')">
-                <i class="fas fa-info-circle"></i>
-                <span>معلومات</span>
+            <button class="tab" onclick="switchTab('tasbeeh')">
+                <i class="fas fa-dharmachakra"></i>
+                <span>Tasbeeh</span>
             </button>
         </div>
     </nav>
 
-    <!-- مین مواد -->
+    <!-- Main Content -->
     <main class="main-content">
-        <!-- ہوم پیج -->
+        <!-- Home Page -->
         <section id="home" class="tab-content active">
             <div class="hero-section">
                 <div class="hero-icon">
                     <i class="fas fa-star-and-crescent"></i>
                 </div>
-                <h2>السلام علیکم و رحمت اللہ و برکاتہ</h2>
-                <p>یہ ایپ آپ کو نماز کی مکمل رہنمائی اور روزمرہ کی دعائیں فراہم کرتی ہے</p>
+                <h2>As-salamu alaykum</h2>
+                <p>Your complete guide to Islamic prayer and daily duas</p>
             </div>
             
-            <div class="quick-links">
-                <div class="link-card" onclick="switchTab('namaz')">
+            <div class="stats-grid">
+                <div class="stat-card">
                     <i class="fas fa-clock"></i>
-                    <h3>نماز سیکھیں</h3>
-                    <p>مکمل طریقہ نماز</p>
+                    <h3>5</h3>
+                    <p>Daily Prayers</p>
                 </div>
-                <div class="link-card" onclick="switchTab('dua')">
-                    <i class="fas fa-hands-praying"></i>
-                    <h3>دعائیں</h3>
-                    <p>روزمرہ کی دعائیں</p>
+                <div class="stat-card">
+                    <i class="fas fa-book"></i>
+                    <h3>99</h3>
+                    <p>Names of Allah</p>
                 </div>
-                <div class="link-card" onclick="showTasbeeh()">
-                    <i class="fas fa-dharmachakra"></i>
-                    <h3>تسبیح</h3>
-                    <p>ذکر و اذکار</p>
+                <div class="stat-card">
+                    <i class="fas fa-pray"></i>
+                    <h3>40+</h3>
+                    <p>Daily Duas</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-quran"></i>
+                    <h3>114</h3>
+                    <p>Quran Surahs</p>
+                </div>
+            </div>
+            
+            <div class="quick-actions">
+                <h3><i class="fas fa-bolt"></i> Quick Actions</h3>
+                <div class="actions-grid">
+                    <div class="action-card" onclick="switchTab('namaz')">
+                        <div class="action-icon">
+                            <i class="fas fa-user-clock"></i>
+                        </div>
+                        <h4>Learn Prayer</h4>
+                        <p>Step-by-step guide</p>
+                    </div>
+                    <div class="action-card" onclick="switchTab('dua')">
+                        <div class="action-icon">
+                            <i class="fas fa-hands"></i>
+                        </div>
+                        <h4>Daily Duas</h4>
+                        <p>Morning & Evening</p>
+                    </div>
+                    <div class="action-card" onclick="showRandomDua()">
+                        <div class="action-icon">
+                            <i class="fas fa-random"></i>
+                        </div>
+                        <h4>Random Dua</h4>
+                        <p>Get inspired</p>
+                    </div>
+                    <div class="action-card" onclick="switchTab('tasbeeh')">
+                        <div class="action-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <h4>Tasbeeh</h4>
+                        <p>Dhikr counter</p>
+                    </div>
                 </div>
             </div>
             
             <div class="prayer-times">
-                <h3><i class="fas fa-calendar-alt"></i> آج کی نماز کے اوقات</h3>
+                <div class="section-header">
+                    <h3><i class="fas fa-calendar-alt"></i> Today's Prayer Times</h3>
+                    <button class="refresh-btn" onclick="updatePrayerTimes()">
+                        <i class="fas fa-sync-alt"></i>
+                    </button>
+                </div>
                 <div class="times-grid" id="prayerTimes">
-                    <!-- نماز کے اوقات یہاں لوڈ ہوں گے -->
+                    <!-- Prayer times will load here -->
+                </div>
+            </div>
+            
+            <div class="featured-content">
+                <h3><i class="fas fa-fire"></i> Featured Today</h3>
+                <div class="featured-card">
+                    <div class="featured-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div class="featured-text">
+                        <h4>Dua of the Day</h4>
+                        <p id="dailyDua">"O Allah, I ask You for knowledge that is beneficial..."</p>
+                        <button class="btn-sm" onclick="showRandomDua()">View More</button>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- نماز سیکشن -->
+        <!-- Prayer Guide -->
         <section id="namaz" class="tab-content">
             <div class="section-header">
-                <h2><i class="fas fa-clock"></i> طریقہ نماز</h2>
-                <p>نماز پڑھنے کا مکمل طریقہ سیکھیں</p>
+                <h2><i class="fas fa-clock"></i> Prayer Guide</h2>
+                <p>Complete step-by-step guide for all prayers</p>
             </div>
             
-            <div class="namaz-types" id="namazContainer">
-                <!-- نماز کے اقسام یہاں لوڈ ہوں گے -->
+            <div class="prayer-types" id="prayerTypes">
+                <!-- Prayer types will load here -->
+            </div>
+            
+            <div class="tutorial-section">
+                <h3><i class="fas fa-graduation-cap"></i> How to Pray</h3>
+                <div class="steps-container" id="prayerSteps">
+                    <!-- Prayer steps will load here -->
+                </div>
             </div>
         </section>
 
-        <!-- دعائیں سیکشن -->
+        <!-- Duas Section -->
         <section id="dua" class="tab-content">
             <div class="section-header">
-                <h2><i class="fas fa-hands-praying"></i> دعائیں</h2>
-                <p>روزمرہ زندگی کی اہم دعائیں</p>
+                <h2><i class="fas fa-hands-praying"></i> Daily Duas</h2>
+                <p>Essential duas for everyday life</p>
             </div>
             
-            <div class="search-box">
-                <i class="fas fa-search"></i>
-                <input type="text" id="duaSearch" placeholder="دعا تلاش کریں..." onkeyup="searchDuas()">
+            <div class="search-container">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="duaSearch" placeholder="Search duas..." onkeyup="searchDuas()">
+                    <button class="clear-search" onclick="clearSearch()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="search-filters">
+                    <button class="filter-btn active" onclick="filterDuas('all')">All</button>
+                    <button class="filter-btn" onclick="filterDuas('morning')">Morning</button>
+                    <button class="filter-btn" onclick="filterDuas('evening')">Evening</button>
+                    <button class="filter-btn" onclick="filterDuas('sleep')">Sleep</button>
+                    <button class="filter-btn" onclick="filterDuas('eating')">Eating</button>
+                </div>
             </div>
             
-            <div class="dua-categories" id="duaCategories">
-                <!-- دعا کی اقسام یہاں لوڈ ہوں گے -->
+            <div class="duas-container" id="duasContainer">
+                <!-- Duas will load here -->
             </div>
         </section>
 
-        <!-- دعا کی فہرست -->
-        <section id="dua-list" class="tab-content">
-            <div class="list-header">
-                <button class="back-btn" onclick="backToDuaCategories()">
-                    <i class="fas fa-arrow-right"></i>
-                    <span>واپس جائیں</span>
-                </button>
-                <h3 id="duaListTitle">دعائیں</h3>
-            </div>
-            
-            <div class="duas-list" id="duasListContainer">
-                <!-- مخصوص قسم کی دعائیں یہاں لوڈ ہوں گی -->
-            </div>
-        </section>
-
-        <!-- معلومات سیکشن -->
-        <section id="about" class="tab-content">
+        <!-- Quran Verses -->
+        <section id="quran" class="tab-content">
             <div class="section-header">
-                <h2><i class="fas fa-info-circle"></i> ایپ کے بارے میں</h2>
+                <h2><i class="fas fa-quran"></i> Quran Verses</h2>
+                <p>Selected verses from the Holy Quran</p>
             </div>
             
-            <div class="about-card">
-                <div class="app-icon-large">
-                    <i class="fas fa-mosque"></i>
-                </div>
-                <h3>اسلامی ایپ</h3>
-                <p>یہ ایپ مسلمانوں کے لئے نماز اور دعاؤں کی رہنمائی فراہم کرتی ہے۔</p>
-                
-                <div class="features">
-                    <div class="feature">
-                        <i class="fas fa-check-circle"></i>
-                        <span>مکمل نماز کا طریقہ</span>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-check-circle"></i>
-                        <span>روزمرہ کی دعائیں</span>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-check-circle"></i>
-                        <span>موبائل فرینڈلی ڈیزائن</span>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-check-circle"></i>
-                        <span>آف لائن استعمال</span>
-                    </div>
-                </div>
-                
-                <div class="version-info">
-                    <p><strong>ورژن:</strong> 1.0.0</p>
-                    <p><strong>تازہ ترین اپڈیٹ:</strong> اکتوبر 2023</p>
-                </div>
-            </div>
-            
-            <div class="developer-info">
-                <h4><i class="fas fa-code"></i> ڈویلپر کی معلومات</h4>
-                <p>یہ ایپ اسلامی مواد تک آسان رسائی کے لئے بنائی گئی ہے۔</p>
-                <p>تمام مواد قابل اعتماد ذرائع سے لیا گیا ہے۔</p>
+            <div class="quran-container" id="quranContainer">
+                <!-- Quran verses will load here -->
             </div>
         </section>
 
-        <!-- تسبیح کاؤنٹر -->
+        <!-- Tasbeeh Counter -->
         <section id="tasbeeh" class="tab-content">
             <div class="section-header">
-                <button class="back-btn" onclick="closeTasbeeh()">
-                    <i class="fas fa-arrow-right"></i>
-                    <span>واپس جائیں</span>
-                </button>
-                <h2><i class="fas fa-dharmachakra"></i> تسبیح کاؤنٹر</h2>
+                <h2><i class="fas fa-dharmachakra"></i> Tasbeeh Counter</h2>
+                <p>Count your dhikr with ease</p>
             </div>
             
             <div class="tasbeeh-container">
-                <div class="tasbeeh-counter">
-                    <div class="counter-display" id="tasbeehCount">0</div>
-                    <div class="counter-label">ذکر</div>
+                <div class="tasbeeh-display">
+                    <div class="counter" id="tasbeehCount">0</div>
+                    <div class="counter-label">Count</div>
                 </div>
                 
                 <div class="tasbeeh-controls">
-                    <button class="tasbeeh-btn" onclick="incrementTasbeeh()">
+                    <button class="tasbeeh-btn add" onclick="incrementTasbeeh()">
                         <i class="fas fa-plus"></i>
-                        <span>اضافہ کریں</span>
+                        <span>Add</span>
                     </button>
                     <button class="tasbeeh-btn reset" onclick="resetTasbeeh()">
                         <i class="fas fa-redo"></i>
-                        <span>ری سیٹ</span>
+                        <span>Reset</span>
+                    </button>
+                    <button class="tasbeeh-btn subtract" onclick="decrementTasbeeh()">
+                        <i class="fas fa-minus"></i>
+                        <span>Subtract</span>
                     </button>
                 </div>
                 
-                <div class="tasbeeh-presets">
-                    <h4>مشہور اذکار</h4>
-                    <div class="preset-buttons">
-                        <button onclick="setTasbeehGoal(33)">سبحان اللہ (33)</button>
-                        <button onclick="setTasbeehGoal(33)">الحمدللہ (33)</button>
-                        <button onclick="setTasbeehGoal(34)">اللہ اکبر (34)</button>
-                        <button onclick="setTasbeehGoal(100)">استغفار (100)</button>
+                <div class="dhikr-presets">
+                    <h4>Common Dhikr</h4>
+                    <div class="preset-grid">
+                        <button class="preset" onclick="startDhikr('Subhanallah', 33)">
+                            <span class="arabic">سُبْحَانَ ٱللَّٰهِ</span>
+                            <span class="roman">Subhanallah</span>
+                            <span class="count">33x</span>
+                        </button>
+                        <button class="preset" onclick="startDhikr('Alhamdulillah', 33)">
+                            <span class="arabic">ٱلْحَمْدُ لِلَّٰهِ</span>
+                            <span class="roman">Alhamdulillah</span>
+                            <span class="count">33x</span>
+                        </button>
+                        <button class="preset" onclick="startDhikr('Allahu Akbar', 34)">
+                            <span class="arabic">ٱللَّٰهُ أَكْبَرُ</span>
+                            <span class="roman">Allahu Akbar</span>
+                            <span class="count">34x</span>
+                        </button>
+                        <button class="preset" onclick="startDhikr('Astaghfirullah', 100)">
+                            <span class="arabic">أَسْتَغْفِرُ ٱللَّٰه</span>
+                            <span class="roman">Astaghfirullah</span>
+                            <span class="count">100x</span>
+                        </button>
                     </div>
                 </div>
                 
-                <div class="tasbeeh-goal">
-                    <h4>ہدف مقرر کریں</h4>
-                    <div class="goal-input">
-                        <input type="number" id="tasbeehGoal" value="100" min="1" max="1000">
-                        <button onclick="setCustomGoal()">مقرر کریں</button>
-                    </div>
-                    <div class="goal-progress">
-                        <div class="progress-bar">
-                            <div class="progress-fill" id="progressFill"></div>
+                <div class="tasbeeh-settings">
+                    <h4>Settings</h4>
+                    <div class="setting-item">
+                        <label for="vibration">Vibration Feedback</label>
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="vibrationToggle" checked>
+                            <span class="slider"></span>
                         </div>
-                        <div class="goal-text" id="goalText">0/100</div>
                     </div>
+                    <div class="setting-item">
+                        <label for="sound">Sound Feedback</label>
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="soundToggle">
+                            <span class="slider"></span>
+                        </div>
+                    </div>
+                    <div class="setting-item">
+                        <label for="goal">Daily Goal</label>
+                        <input type="number" id="dailyGoal" value="100" min="10" max="1000">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Settings -->
+        <section id="settings" class="tab-content">
+            <div class="section-header">
+                <h2><i class="fas fa-cog"></i> Settings</h2>
+                <p>Customize your experience</p>
+            </div>
+            
+            <div class="settings-container">
+                <div class="settings-card">
+                    <h4><i class="fas fa-palette"></i> Appearance</h4>
+                    <div class="setting-item">
+                        <label>Theme</label>
+                        <div class="theme-options">
+                            <button class="theme-option active" data-theme="dark">Dark</button>
+                            <button class="theme-option" data-theme="light">Light</button>
+                            <button class="theme-option" data-theme="auto">Auto</button>
+                        </div>
+                    </div>
+                    <div class="setting-item">
+                        <label>Font Size</label>
+                        <div class="font-size-control">
+                            <button class="font-btn" onclick="changeFontSize(-1)">A-</button>
+                            <span class="font-size-label">Medium</span>
+                            <button class="font-btn" onclick="changeFontSize(1)">A+</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="settings-card">
+                    <h4><i class="fas fa-bell"></i> Notifications</h4>
+                    <div class="setting-item">
+                        <label>Prayer Reminders</label>
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="prayerReminders" checked>
+                            <span class="slider"></span>
+                        </div>
+                    </div>
+                    <div class="setting-item">
+                        <label>Dua Reminders</label>
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="duaReminders">
+                            <span class="slider"></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="settings-card">
+                    <h4><i class="fas fa-info-circle"></i> About</h4>
+                    <div class="about-info">
+                        <p><strong>Version:</strong> 2.0.0</p>
+                        <p><strong>Last Updated:</strong> October 2023</p>
+                        <p><strong>Data Source:</strong> Authentic Islamic References</p>
+                    </div>
+                    <button class="btn-full" onclick="clearAppData()">
+                        <i class="fas fa-trash"></i>
+                        Clear App Data
+                    </button>
+                    <button class="btn-full" onclick="exportData()">
+                        <i class="fas fa-download"></i>
+                        Export Data
+                    </button>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- مودل/پاپ اپ -->
-    <div class="modal" id="modal">
+    <!-- Dua Detail Modal -->
+    <div class="modal" id="duaModal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 id="modal-title">عنوان</h3>
-                <button class="close-btn" onclick="closeModal()">
+                <h3 id="duaModalTitle">Dua Title</h3>
+                <button class="close-modal" onclick="closeModal()">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
-            <div class="modal-body" id="modal-body">
-                <!-- مواد یہاں لوڈ ہوگا -->
+            <div class="modal-body" id="duaModalBody">
+                <!-- Dua content will load here -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn" onclick="shareDua()">
+                    <i class="fas fa-share"></i>
+                    Share
+                </button>
+                <button class="btn" onclick="favoriteDua()">
+                    <i class="far fa-heart"></i>
+                    Favorite
+                </button>
+                <button class="btn" onclick="playAudio()">
+                    <i class="fas fa-volume-up"></i>
+                    Listen
+                </button>
             </div>
         </div>
     </div>
 
-    <!-- لوڈنگ انڈیکیٹر -->
-    <div class="loading" id="loading">
-        <div class="spinner">
-            <i class="fas fa-spinner fa-spin"></i>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-content">
+            <div class="spinner">
+                <i class="fas fa-spinner fa-spin"></i>
+            </div>
+            <p>Loading...</p>
         </div>
-        <p>لوڈ ہو رہا ہے...</p>
     </div>
 
-    <!-- فٹر -->
-    <footer class="app-footer">
-        <p>© 2023 اسلامی ایپ - تمام حقوق محفوظ ہیں</p>
-        <p>اللہ ہماری نمازیں اور دعائیں قبول فرمائے۔ آمین</p>
-    </footer>
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
 
     <script src="script.js"></script>
 </body>

@@ -1,0 +1,884 @@
+/* بنیادی اسٹائلز */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+:root {
+    --primary-color: #2c5f2d;
+    --secondary-color: #97bc62;
+    --accent-color: #f0c420;
+    --light-color: #000;
+    --dark-color: #1e3a1e;
+    --text-color: #333;
+    --text-light: #666;
+    --border-color: #000;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+    --radius: 16px;
+    --radius-sm: 8px;
+    --safe-area-top: env(safe-area-inset-top, 0px);
+    --safe-area-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+body {
+    font-family: 'Poppins', 'Noto Nastaliq Urdu', 'Amiri', sans-serif;
+    background-color: #000;
+    color: var(--text-color);
+    line-height: 1.6;
+    direction: rtl;
+    padding-top: calc(60px + var(--safe-area-top));
+    padding-bottom: calc(80px + var(--safe-area-bottom));
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
+/* ہیڈر اسٹائلز */
+.app-header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+    color: black;
+    padding: 12px 16px;
+    padding-top: calc(12px + var(--safe-area-top));
+    z-index: 1000;
+    box-shadow: var(--shadow);
+    height: 60px;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo i {
+    font-size: 24px;
+    color: var(--accent-color);
+}
+
+.logo h1 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.menu-toggle {
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    border-radius: var(--radius-sm);
+    color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.2s;
+}
+
+.menu-toggle:active {
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(0.95);
+}
+
+/* ٹیب نیویگیشن */
+.tab-nav {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: black;
+    border-top: 1px solid var(--border-color);
+    padding: 8px 0;
+    padding-bottom: calc(8px + var(--safe-area-bottom));
+    z-index: 1000;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 12px;
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all 0.2s;
+    flex: 1;
+    max-width: 80px;
+}
+
+.tab i {
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.tab.active {
+    color: var(--primary-color);
+    background: rgba(44, 95, 45, 0.08);
+}
+
+.tab:active {
+    background: rgba(44, 95, 45, 0.12);
+    transform: scale(0.95);
+}
+
+/* مین مواد */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ہوم پیج اسٹائلز */
+.hero-section {
+    text-align: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 30px 20px;
+    border-radius: var(--radius);
+    margin-bottom: 24px;
+    box-shadow: var(--shadow);
+}
+
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+    color: var(--accent-color);
+}
+
+.hero-section h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.hero-section p {
+    opacity: 0.9;
+    font-size: 15px;
+}
+
+.quick-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.link-card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 18px 12px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 1px solid var(--border-color);
+}
+
+.link-card:active {
+    transform: scale(0.97);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.link-card i {
+    font-size: 28px;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.link-card h3 {
+    font-size: 16px;
+    margin-bottom: 6px;
+    color: var(--dark-color);
+}
+
+.link-card p {
+    font-size: 13px;
+    color: var(--text-light);
+}
+
+.prayer-times {
+    background: white;
+    border-radius: var(--radius);
+    padding: 20px;
+    box-shadow: var(--shadow);
+}
+
+.prayer-times h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+    color: var(--dark-color);
+    font-size: 18px;
+}
+
+.prayer-times h3 i {
+    color: var(--primary-color);
+}
+
+.times-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.time-card {
+    background: #000;
+    border-radius: var(--radius-sm);
+    padding: 14px 10px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+}
+
+.time-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--dark-color);
+    margin-bottom: 6px;
+}
+
+.time-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* نماز سیکشن */
+.section-header {
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.section-header h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 22px;
+    color: var(--dark-color);
+    margin-bottom: 8px;
+}
+
+.section-header p {
+    color: var(--text-light);
+    font-size: 15px;
+}
+
+.namaz-types {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.namaz-card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 20px;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+    border: 1px solid var(--border-color);
+}
+
+.namaz-card:active {
+    transform: scale(0.98);
+}
+
+.namaz-icon {
+    font-size: 32px;
+    color: var(--primary-color);
+    margin-bottom: 12px;
+}
+
+.namaz-card h3 {
+    font-size: 17px;
+    margin-bottom: 8px;
+    color: var(--dark-color);
+}
+
+.namaz-card p {
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+/* دعا سیکشن */
+.search-box {
+    background: white;
+    border-radius: var(--radius);
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.search-box i {
+    color: var(--text-light);
+    font-size: 18px;
+}
+
+.search-box input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    font-size: 16px;
+    color: var(--text-color);
+    background: transparent;
+}
+
+.search-box input::placeholder {
+    color: #aaa;
+}
+
+.dua-categories {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.category-card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 20px;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+    border: 1px solid var(--border-color);
+}
+
+.category-card:active {
+    transform: scale(0.98);
+}
+
+.category-icon {
+    font-size: 32px;
+    color: var(--primary-color);
+    margin-bottom: 12px;
+}
+
+.category-card h3 {
+    font-size: 17px;
+    margin-bottom: 8px;
+    color: var(--dark-color);
+}
+
+.category-card p {
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+/* دعا فہرست */
+.list-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.back-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #000;
+    border: none;
+    border-radius: var(--radius-sm);
+    padding: 10px 16px;
+    font-family: inherit;
+    font-size: 15px;
+    color: var(--dark-color);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.back-btn i {
+    font-size: 14px;
+}
+
+.back-btn:active {
+    background: #000;
+    transform: scale(0.97);
+}
+
+#duaListTitle {
+    flex: 1;
+    text-align: center;
+    font-size: 20px;
+    color: var(--dark-color);
+}
+
+.duas-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.dua-item {
+    background: white;
+    border-radius: var(--radius);
+    padding: 20px;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 1px solid var(--border-color);
+}
+
+.dua-item:active {
+    transform: scale(0.99);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dua-item h4 {
+    font-size: 17px;
+    margin-bottom: 12px;
+    color: var(--dark-color);
+}
+
+.dua-item .arabic {
+    font-family: 'Amiri', serif;
+    font-size: 20px;
+    line-height: 1.8;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.dua-item p {
+    font-size: 15px;
+    color: var(--text-color);
+}
+
+/* تسبیح سیکشن */
+.tasbeeh-container {
+    background: white;
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+}
+
+.tasbeeh-counter {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.counter-display {
+    font-size: 72px;
+    font-weight: 700;
+    color: var(--primary-color);
+    line-height: 1;
+    margin-bottom: 8px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.counter-label {
+    font-size: 16px;
+    color: var(--text-light);
+}
+
+.tasbeeh-controls {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 30px;
+}
+
+.tasbeeh-btn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    padding: 20px 10px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 12px rgba(44, 95, 45, 0.2);
+}
+
+.tasbeeh-btn i {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.tasbeeh-btn:active {
+    transform: scale(0.97);
+    box-shadow: 0 2px 8px rgba(44, 95, 45, 0.3);
+}
+
+.tasbeeh-btn.reset {
+    background: #000;
+    color: var(--text-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.tasbeeh-presets {
+    margin-bottom: 30px;
+}
+
+.tasbeeh-presets h4 {
+    font-size: 18px;
+    margin-bottom: 16px;
+    color: var(--dark-color);
+    text-align: center;
+}
+
+.preset-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.preset-buttons button {
+    background: #000;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: 14px 10px;
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--dark-color);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.preset-buttons button:active {
+    background: #000
+    transform: scale(0.97);
+}
+
+.tasbeeh-goal h4 {
+    font-size: 18px;
+    margin-bottom: 16px;
+    color: var(--dark-color);
+    text-align: center;
+}
+
+.goal-input {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.goal-input input {
+    flex: 1;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: 12px 16px;
+    font-family: inherit;
+    font-size: 16px;
+    text-align: center;
+}
+
+.goal-input button {
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: var(--radius-sm);
+    padding: 12px 20px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.goal-input button:active {
+    background: #86ab54;
+    transform: scale(0.97);
+}
+
+.goal-progress {
+    background: #000;
+    border-radius: var(--radius);
+    padding: 20px;
+    border: 1px solid var(--border-color);
+}
+
+.progress-bar {
+    height: 20px;
+    background: #000;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+    border-radius: 10px;
+    width: 0%;
+    transition: width 0.5s ease;
+}
+
+.goal-text {
+    text-align: center;
+    font-size: 16px;
+    color: var(--dark-color);
+    font-weight: 500;
+}
+
+/* مودل اسٹائلز */
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+}
+
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: white;
+    border-radius: var(--radius);
+    width: 100%;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    transform: translateY(20px);
+    transition: transform 0.3s;
+}
+
+.modal.active .modal-content {
+    transform: translateY(0);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+    color: white;
+}
+
+.modal-header h3 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.close-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.close-btn:active {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(0.95);
+}
+
+.modal-body {
+    padding: 24px;
+    overflow-y: auto;
+    max-height: calc(80vh - 80px);
+}
+
+.modal-body .step {
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.modal-body .step:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.modal-body .step h4 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: var(--dark-color);
+}
+
+.modal-body .arabic {
+    font-family: 'Amiri', serif;
+    font-size: 22px;
+    line-height: 1.8;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.modal-body p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-color);
+}
+
+/* لوڈنگ انڈیکیٹر */
+.loading {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.95);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 3000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+}
+
+.loading.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.spinner {
+    font-size: 48px;
+    color: var(--primary-color);
+    margin-bottom: 16px;
+}
+
+.loading p {
+    font-size: 18px;
+    color: var(--dark-color);
+}
+
+/* فٹر */
+.app-footer {
+    text-align: center;
+    padding: 20px 16px;
+    color: var(--text-light);
+    font-size: 14px;
+    background: #000;
+    border-top: 1px solid var(--border-color);
+}
+
+.app-footer p:first-child {
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+/* iOS خاص اسٹائلز */
+@supports (-webkit-touch-callout: none) {
+    body {
+        -webkit-font-smoothing: antialiased;
+    }
+    
+    .tab, .link-card, .namaz-card, .category-card, .dua-item, .tasbeeh-btn, .back-btn {
+        cursor: default;
+    }
+    
+    input, button {
+        -webkit-appearance: none;
+        border-radius: 0;
+    }
+}
+
+/* میڈیا کوریز */
+@media (max-width: 480px) {
+    .quick-links, .times-grid, .namaz-types, .dua-categories {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .hero-section {
+        padding: 24px 16px;
+    }
+    
+    .hero-section h2 {
+        font-size: 20px;
+    }
+    
+    .section-header h2 {
+        font-size: 20px;
+    }
+    
+    .counter-display {
+        font-size: 64px;
+    }
+}
+
+@media (min-width: 768px) {
+    .quick-links, .namaz-types, .dua-categories {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .times-grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .quick-links, .namaz-types, .dua-categories {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

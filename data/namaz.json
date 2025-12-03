@@ -2,66 +2,126 @@
   "types": [
     {
       "id": "fajr",
-      "name": "نماز فجر",
-      "description": "صبح کی نماز",
-      "time": "طلوع فجر سے سورج نکلنے تک",
-      "rakats": "2 سنت، 2 فرض",
-      "icon": "fas fa-sun"
+      "name": "Fajr Prayer",
+      "description": "Morning prayer before sunrise",
+      "time": "Dawn to sunrise",
+      "rakats": "2 Sunnah, 2 Fard",
+      "icon": "fas fa-sun",
+      "audible": true
     },
     {
       "id": "dhuhr",
-      "name": "نماز ظہر",
-      "description": "دوپہر کی نماز",
-      "time": "زوال سے پہلے",
-      "rakats": "4 سنت، 4 فرض، 2 سنت",
-      "icon": "fas fa-sun"
+      "name": "Dhuhr Prayer",
+      "description": "Midday prayer after sun passes zenith",
+      "time": "After noon until mid-afternoon",
+      "rakats": "4 Sunnah, 4 Fard, 2 Sunnah",
+      "icon": "fas fa-sun",
+      "audible": true
     },
     {
       "id": "asr",
-      "name": "نماز عصر",
-      "description": "سہ پہر کی نماز",
-      "time": "سایہ ہر چیز کے دو برابر ہونے تک",
-      "rakats": "4 فرض",
-      "icon": "fas fa-cloud-sun"
+      "name": "Asr Prayer",
+      "description": "Afternoon prayer",
+      "time": "Mid-afternoon until sunset",
+      "rakats": "4 Fard",
+      "icon": "fas fa-cloud-sun",
+      "audible": false
     },
     {
       "id": "maghrib",
-      "name": "نماز مغرب",
-      "description": "غروب آفتاب کی نماز",
-      "time": "سورج غروب ہونے کے بعد",
-      "rakats": "3 فرض، 2 سنت",
-      "icon": "fas fa-sunset"
+      "name": "Maghrib Prayer",
+      "description": "Evening prayer after sunset",
+      "time": "After sunset until darkness",
+      "rakats": "3 Fard, 2 Sunnah",
+      "icon": "fas fa-sunset",
+      "audible": true
     },
     {
       "id": "isha",
-      "name": "نماز عشاء",
-      "description": "رات کی نماز",
-      "time": "شفق غائب ہونے کے بعد",
-      "rakats": "4 فرض، 2 سنت، 3 وتر",
-      "icon": "fas fa-moon"
+      "name": "Isha Prayer",
+      "description": "Night prayer",
+      "time": "After darkness until midnight",
+      "rakats": "4 Fard, 2 Sunnah, 3 Witr",
+      "icon": "fas fa-moon",
+      "audible": true
     }
   ],
   "steps": {
     "fajr": [
       {
-        "title": "نیّت",
+        "title": "Make Intention",
         "arabic": "نَوَيْتُ أَنْ أُصَلِّيَ صَلاةَ الصُّبْحِ رَكْعَتَيْنِ فَرْضاً لِلَّهِ تَعَالَى",
-        "transcription": "Nawaiytu an usalliya salatas subhi rak'atayni farzal lillahi ta'ala",
-        "description": "میں نے فجر کی دو رکعت فرض نماز اللہ تعالیٰ کے لئے پڑھنے کی نیت کی۔"
+        "roman": "Nawaitu an usalliya salatas subhi rak'atayni fardan lillahi ta'ala",
+        "description": "I intend to pray the Fajr prayer, two rakats fard for Allah the Exalted. The intention is made in the heart, not spoken aloud.",
+        "notes": "The intention must be sincere and for the sake of Allah alone."
       },
       {
-        "title": "تکبیر تحریمہ",
+        "title": "Takbiratul Ihram",
         "arabic": "اللهُ أَكْبَرُ",
-        "transcription": "Allahu Akbar",
-        "description": "اللہ سب سے بڑا ہے (کہتے ہوئے ہاتھ کانوں تک اٹھائیں)"
+        "roman": "Allahu Akbar",
+        "description": "Raise your hands to your ears (men) or shoulders (women) and say 'Allahu Akbar' (Allah is the Greatest). This marks the beginning of the prayer.",
+        "notes": "Keep your eyes on the place of prostration throughout the prayer."
+      },
+      {
+        "title": "Standing (Qiyam)",
+        "arabic": "سُبْحَانَكَ اللَّهُمَّ وَبِحَمْدِكَ وَتَبَارَكَ اسْمُكَ وَتَعَالَى جَدُّكَ وَلاَ إِلَهَ غَيْرُكَ",
+        "roman": "Subhanakallahumma wa bihamdika wa tabarakasmuka wa ta'ala jadduka wa la ilaha ghairuk",
+        "description": "Place your right hand over left on your chest. Recite the opening supplication (Thana). Then recite Surah Al-Fatihah followed by another Surah or verses from Quran.",
+        "notes": "Men should place hands below navel, women on chest."
+      },
+      {
+        "title": "Ruku (Bowing)",
+        "arabic": "سُبْحَانَ رَبِّيَ الْعَظِيمِ",
+        "roman": "Subhana Rabbiyal Adheem",
+        "description": "Bow down saying 'Allahu Akbar', place hands on knees, keep back straight, and recite 'Subhana Rabbiyal Adheem' (Glory to my Lord, the Great) three times.",
+        "notes": "Keep your head level with your back, don't raise or lower it."
+      },
+      {
+        "title": "Standing from Ruku",
+        "arabic": "سَمِعَ اللَّهُ لِمَنْ حَمِدَهُ رَبَّنَا وَلَكَ الْحَمْدُ",
+        "roman": "Sami'Allahu liman hamidah, Rabbana wa lakal hamd",
+        "description": "Raise up from bowing saying 'Sami'Allahu liman hamidah' (Allah hears those who praise Him). When standing straight, say 'Rabbana wa lakal hamd' (Our Lord, to You is all praise).",
+        "notes": "Stand straight and still before going to prostration."
+      },
+      {
+        "title": "Sujood (Prostration)",
+        "arabic": "سُبْحَانَ رَبِّيَ الأَعْلَى",
+        "roman": "Subhana Rabbiyal A'la",
+        "description": "Go down to prostration saying 'Allahu Akbar'. Place forehead, nose, palms, knees, and toes on ground. Recite 'Subhana Rabbiyal A'la' (Glory to my Lord, the Most High) three times.",
+        "notes": "Keep elbows away from sides for men, close for women."
+      },
+      {
+        "title": "Sitting between Prostrations",
+        "description": "Sit up from prostration saying 'Allahu Akbar'. Sit on left foot with right foot upright. Place hands on thighs. Say 'Rabbighfir li' (O Lord, forgive me). Then perform second prostration.",
+        "notes": "Maintain this position briefly before second prostration."
+      },
+      {
+        "title": "Second Rakat",
+        "description": "Stand up for second rakat saying 'Allahu Akbar'. Repeat steps 3-7. After second prostration, remain seated for Tashahhud.",
+        "notes": "The second rakat is similar to the first."
+      },
+      {
+        "title": "Tashahhud (Sitting)",
+        "arabic": "التَّحِيَّاتُ لِلَّهِ وَالصَّلَوَاتُ وَالطَّيِّبَاتُ، السَّلَامُ عَلَيْكَ أَيُّهَا النَّبِيُّ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ، السَّلَامُ عَلَيْنَا وَعَلَى عِبَادِ اللَّهِ الصَّالِحِينَ، أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللَّهُ، وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ",
+        "roman": "Attahiyyatu lillahi wassalawatu wattayyibatu. Assalamu alaika ayyuhannabiyyu wa rahmatullahi wa barakatuh. Assalamu alaina wa ala ibadillahis salihin. Ashhadu an la ilaha illallah wa ashhadu anna Muhammadan abduhu wa rasuluh",
+        "description": "After second rakat, sit and recite Tashahhud. Raise right index finger when saying 'Ashhadu an la ilaha illallah'.",
+        "notes": "Sit on left foot, right foot upright."
+      },
+      {
+        "title": "Salam (Ending Prayer)",
+        "arabic": "السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ",
+        "roman": "Assalamu alaikum wa rahmatullah",
+        "description": "Turn head to right saying 'Assalamu alaikum wa rahmatullah' (Peace and mercy of Allah be upon you). Then turn to left and repeat.",
+        "notes": "This completes the prayer."
       }
     ],
     "dhuhr": [
       {
-        "title": "نیّت",
+        "title": "Make Intention",
         "arabic": "نَوَيْتُ أَنْ أُصَلِّيَ صَلاةَ الظُّهْرِ أَرْبَعَ رَكَعَاتٍ فَرْضاً لِلَّهِ تَعَالَى",
-        "transcription": "Nawaiytu an usalliya salataz zuhri arba'a raka'atin farzal lillahi ta'ala",
-        "description": "میں نے ظہر کی چار رکعت فرض نماز اللہ تعالیٰ کے لئے پڑھنے کی نیت کی۔"
+        "roman": "Nawaitu an usalliya salataz zuhri arba'a raka'atin fardan lillahi ta'ala",
+        "description": "I intend to pray the Dhuhr prayer, four rakats fard for Allah the Exalted.",
+        "notes": "The intention is made in the heart before starting."
       }
     ]
   }

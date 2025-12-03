@@ -1,0 +1,68 @@
+{
+  "types": [
+    {
+      "id": "fajr",
+      "name": "نماز فجر",
+      "description": "صبح کی نماز",
+      "time": "طلوع فجر سے سورج نکلنے تک",
+      "rakats": "2 سنت، 2 فرض",
+      "icon": "fas fa-sun"
+    },
+    {
+      "id": "dhuhr",
+      "name": "نماز ظہر",
+      "description": "دوپہر کی نماز",
+      "time": "زوال سے پہلے",
+      "rakats": "4 سنت، 4 فرض، 2 سنت",
+      "icon": "fas fa-sun"
+    },
+    {
+      "id": "asr",
+      "name": "نماز عصر",
+      "description": "سہ پہر کی نماز",
+      "time": "سایہ ہر چیز کے دو برابر ہونے تک",
+      "rakats": "4 فرض",
+      "icon": "fas fa-cloud-sun"
+    },
+    {
+      "id": "maghrib",
+      "name": "نماز مغرب",
+      "description": "غروب آفتاب کی نماز",
+      "time": "سورج غروب ہونے کے بعد",
+      "rakats": "3 فرض، 2 سنت",
+      "icon": "fas fa-sunset"
+    },
+    {
+      "id": "isha",
+      "name": "نماز عشاء",
+      "description": "رات کی نماز",
+      "time": "شفق غائب ہونے کے بعد",
+      "rakats": "4 فرض، 2 سنت، 3 وتر",
+      "icon": "fas fa-moon"
+    }
+  ],
+  "steps": {
+    "fajr": [
+      {
+        "title": "نیّت",
+        "arabic": "نَوَيْتُ أَنْ أُصَلِّيَ صَلاةَ الصُّبْحِ رَكْعَتَيْنِ فَرْضاً لِلَّهِ تَعَالَى",
+        "transcription": "Nawaiytu an usalliya salatas subhi rak'atayni farzal lillahi ta'ala",
+        "description": "میں نے فجر کی دو رکعت فرض نماز اللہ تعالیٰ کے لئے پڑھنے کی نیت کی۔"
+      },
+      {
+        "title": "تکبیر تحریمہ",
+        "arabic": "اللهُ أَكْبَرُ",
+        "transcription": "Allahu Akbar",
+        "description": "اللہ سب سے بڑا ہے (کہتے ہوئے ہاتھ کانوں تک اٹھائیں)"
+      }
+    ],
+    "dhuhr": [
+      {
+        "title": "نیّت",
+        "arabic": "نَوَيْتُ أَنْ أُصَلِّيَ صَلاةَ الظُّهْرِ أَرْبَعَ رَكَعَاتٍ فَرْضاً لِلَّهِ تَعَالَى",
+        "transcription": "Nawaiytu an usalliya salataz zuhri arba'a raka'atin farzal lillahi ta'ala",
+        "description": "میں نے ظہر کی چار رکعت فرض نماز اللہ تعالیٰ کے لئے پڑھنے کی نیت کی۔"
+      }
+    ]
+  }
+}
